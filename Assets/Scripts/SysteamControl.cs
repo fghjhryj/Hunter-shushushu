@@ -58,7 +58,10 @@ namespace KID
             cameraMouse = GameObject.Find("轉換滑鼠用攝影機").GetComponent<Camera>();
 
             // traMous = GameObject.Find("座標轉換後實體物件").GetComponent<Transform>();
-            traMouse = GameObject.Find("座標轉換後實體物件").transforn;
+            traMouse = GameObject.Find("座標轉換後實體物件").transform;
+
+            // 物理 忽略圖層(圖層1 ， 圖層2)
+            Physics.IgnoreCollision(3, 3);
         }
 
         private void Update()
