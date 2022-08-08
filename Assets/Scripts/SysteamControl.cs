@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
 // 命名空間 namespace 空間名稱 { 該空間的內容 }
 namespace KID
@@ -32,7 +33,7 @@ namespace KID
         [Header("彈珠數量")]
         public TextMeshProUGUI textMarbleCount;
 
-        public Animator ani;
+        private Animator ani;
         /// <summary>
         /// 能否發射彈珠
         /// </summary>
@@ -57,16 +58,17 @@ namespace KID
 
             cameraMouse = GameObject.Find("轉換滑鼠用攝影機").GetComponent<Camera>();
 
-            // traMous = GameObject.Find("座標轉換後實體物件").GetComponent<Transform>();
+            // traMouse = GameObject.Find("座標轉換後實體物件").GetComponent<Transform>();
             traMouse = GameObject.Find("座標轉換後實體物件").transform;
 
-            // 物理 忽略圖層(圖層1 ， 圖層2)
-            Physics.IgnoreCollision(3, 3);
+            // 物理 忽略圖層碰撞(圖層1，圖層2)
+            Physics.IgnoreLayerCollision(3, 3);
         }
 
         private void Update()
         {
             ShootMarble();
+            TurnCharacter();
         }
         #endregion
 
@@ -77,18 +79,18 @@ namespace KID
         private void TurnCharacter()
         {
             // 如果 不能發射 就跳出
-            if (!cameraMouse) return;
-            
+            if (!canShootMarble) return;
+
             // 1. 滑鼠座標
             Vector3 posMouse = Input.mousePosition;
 
-            // print("<color=yellow>滑鼠座標 : " + posMouse + "</color>");
+            // print("<color=yellow>滑鼠座標：" + posMouse + "</color>");
             // 跟攝影機的 Y 軸一樣
             posMouse.z = 25;
 
             // 2. 滑鼠座標轉為世界座標
             Vector3 pos = cameraMouse.ScreenToWorldPoint(posMouse);
-            // 將轉換完的世界座標高度設為角色的高度
+            // 將轉換完的世界座標高度設定為角色的高度
             pos.y = 0.5f;
             // 3. 世界座標給實體物件
             traMouse.position = pos;
@@ -115,7 +117,7 @@ namespace KID
             {
                 // 不能發射彈珠
                 canShootMarble = false;
-                
+
                 // print("放開左鍵！");
                 arrow.SetActive(false);
                 StartCoroutine(SpawnMarble());
@@ -128,7 +130,7 @@ namespace KID
         private IEnumerator SpawnMarble()
         {
             int total = canShootMarbleTotal;
-            
+
             for (int i = 0; i < canShootMarbleTotal; i++)
             {
                 ani.SetTrigger(parAttack);
