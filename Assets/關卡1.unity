@@ -952,7 +952,7 @@ GameObject:
   m_Component:
   - component: {fileID: 219495571}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: "\u82B1\u82B1\u8349\u8349"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2553,6 +2553,10 @@ PrefabInstance:
         'J_R_HairSide_00'\n\tTransform 'J_L_HairFront_00'\n\tTransform 'J_L_HairSide_00'\n\tTransform
         'J_R_HairSide_00'\n\tFrom animation clip 'WAIT01'\n\tFrom animation clip
         'WAIT04'"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
       propertyPath: m_DirtyAABB
@@ -5984,7 +5988,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1124703166
 MonoBehaviour:
   m_ObjectHideFlags: 0
