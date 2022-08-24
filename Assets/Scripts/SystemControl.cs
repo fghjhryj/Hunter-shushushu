@@ -37,7 +37,7 @@ namespace KID
         /// <summary>
         /// 能否發射彈珠
         /// </summary>
-        private bool canShootMarble = true;
+        public bool canShootMarble = true;
         /// <summary>
         /// 轉換滑鼠用攝影機
         /// </summary>
