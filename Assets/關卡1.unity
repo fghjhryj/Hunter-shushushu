@@ -2530,9 +2530,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a5195686b55c6499f476afb1924eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrow: {fileID: 0}
+  arrow: {fileID: 1933445536}
   speedTurn: 10.5
-  marble: {fileID: 0}
+  marble: {fileID: 1673436616664795618, guid: 3eb10ab26526bd4438c8dc33040bd592, type: 3}
   canShootMarbleTotal: 15
   traSpawnPoint: {fileID: 0}
   parAttack: "\u89F8\u767C\u653B\u64CA"

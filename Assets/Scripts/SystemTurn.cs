@@ -33,6 +33,8 @@ namespace KID
         private bool canSpawn = true;
         #endregion
 
+
+
         private void Awake()
         {
             systemControl = GameObject.Find("­ô¥¬ªL").GetComponent<SystemControl>();
